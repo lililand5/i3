@@ -244,9 +244,9 @@ bar {
 
 # ЦВЕТ РАМОК
 #                       Рамка   Фон   Индикатор Родительская_рамка
-client.focused			#4c566a #ffffff #ffffff #ffffff
-client.focused_inactive		#4c566a #4c566a #011b28 #011b28
-client.unfocused		#4c566a #4c566a #011b28 #011b28
+client.focused			#a8b9dc #6e8bc4 #ffffff #ffffff
+client.focused_inactive #4c566a #8c8c8c #011b28 #011b28
+client.unfocused		#4c566a #4c566a #ffffff #011b28
 client.urgent			#4c566a #4c566a #011b28 #011b28
 client.placeholder		#4c566a #4c566a #011b28 #011b28
 
