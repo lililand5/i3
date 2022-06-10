@@ -25,8 +25,6 @@ set $mod Mod4
 bindsym $mod+Shift+e exec i3-msg exit
 
 
-
-
 # Шрифт для заголовков окон. Также будет использоваться панелью, если не выбран другой шрифт.
 
 # используется в блоке bar {} ниже.
@@ -35,7 +33,6 @@ font pango:monospace 12
 
 
 # АВТОЗАПУСК
-
 # раскладка клавиатуры
 # рабочий для ububntu 22, нужно только сделать super+Shift+r после каждой перезагрузки
 exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
@@ -46,98 +43,59 @@ exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_sh
 #exec "setxkbmap -layout us,ru"
 #exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
-
-
 exec --no-startup-id gnome-terminal
-
 exec --no-startup-id opera
-
 exec --no-startup-id firefox
-
 exec --no-startup-id code
-
 exec --no-startup-id postman
-
 exec --no-startup-id google-chrome
-
-#exec --no-startup-id crow
-
+# exec --no-startup-id crow #
 exec --no-startup-id protonvpn
-
 exec --no-startup-id obs
 
 
-
 # ПРИВЯЗКА К ВОРКСПЕЙСАМ
-
 assign [class="(?i)Gnome-terminal"] $ws1
-
 assign [class="(?i)Firefox"] $ws1
-
 assign [class="(?i)Code"] $ws1
-
 assign [class="(?i)Postman"] $ws1
-
 assign [class="(?i)Yandex"] $ws2
-
+assign [class="Google"] $ws2
 assign [class="Opera"] $ws3
-
-assign [class="Google"] $ws4
-
 assign [class="Protonvpn"] $ws5
-
 assign [class="(?i)Obs"] $ws10
 
 
 
 # ГОРЯЧИЕ КЛАВИШИ
-
 ### где вставляем привязку хоткея
-
 #bindsym $mod + F12 exec /home/igancev/bin/monitorToggle
 
 # ГОРЯЧИЕ КЛАВИШИ
-
 #bindsym $mod+F1 exec code
-
 bindsym $mod+F2 exec firefox
-
 #bindsym $mod+F3 exec opera
-
 bindsym $mod+F9 exec nemo
-
+bindsym $mod+F8 exec gedit
 #bindsym $mod+F5 exec
 
 
 
 # ЗВУК
-
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-
 #bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
-
-
 # ЯРКОСТЬ
-
 bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
-
 bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
 
 
-
-
 #СРИНШОТЫ
-
 # install: maim, xclip
-
-## Clipboard Screenshots
 bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 #bindsym $mod+Shift+s exec --no-startup-id maim | xclip -selection clipboard -t image/png
-
 #bindsym $mod+Shift+s exec exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 
 
@@ -146,77 +104,57 @@ bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipb
 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
-
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-
 #font pango:DejaVu Sans Mono 8
 
-
-
 # Start XDG autostart .desktop files using dex. See also
-
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-
 exec --no-startup-id dex --autostart --environment i3
 
 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
-
 # they are included here as an example. Modify as you see fit.
 
 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-
 # screen before suspend. Use loginctl lock-session to lock your screen.
-
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
-
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-
 exec --no-startup-id nm-applet
 
 
 
 # Use pactl to adjust volume in PulseAudio.
-
 set $refresh_i3status killall -SIGUSR1 i3status
-
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-
 floating_modifier $mod
 
 
 
 # start a terminal
-
 bindsym $mod+Return exec i3-sensible-terminal
 
 
 
 # kill focused window
-
 bindsym $mod+Shift+q kill
 
 
 
 # start dmenu (a program launcher)
-
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # A more modern dmenu replacement is rofi:
@@ -336,23 +274,14 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 
 set $ws1 "1"
-
 set $ws2 "2"
-
 set $ws3 "3"
-
 set $ws4 "4"
-
 set $ws5 "5"
-
 set $ws6 "6"
-
 set $ws7 "7"
-
 set $ws8 "8"
-
 set $ws9 "9"
-
 set $ws10 "10"
 
 
