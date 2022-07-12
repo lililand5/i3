@@ -24,6 +24,7 @@ bindsym $mod+Shift+e exec i3-msg exit
 font pango:monospace 13
 
 
+
 # АВТОЗАПУСК
 # раскладка клавиатуры
 # рабочий для ububntu 22, нужно только сделать super+Shift+r после каждой перезагрузки
@@ -91,7 +92,7 @@ bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
 bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 #сохранить выбранную область в картинках
-bindsym $mod+Shift+m exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+bindsym $mod+Shift+m exec --no-startup-id maim --select "/home/$USER/Pictures/$(date +%Y-%m-%dT%H:%M:%S).png"
 
 #bindsym --release Print exec "maim -su ~/Downloads/$(date +%Y-%m-%dT%H:%M:%S).png"
 #bindsym $mod+Shift+s exec --no-startup-id maim | xclip -selection clipboard -t image/png
