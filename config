@@ -24,40 +24,37 @@ bindsym $mod+Shift+e exec i3-msg exit
 font pango:monospace 13
 
 
-
 # АВТОЗАПУСК
+# display resolution
+# xrandr --query # options
+exec --no-startup-id xrandr --output eDP --mode 1920x1200
+
 # раскладка клавиатуры
-# рабочий для ububntu 22, нужно только сделать super+Shift+r после каждой перезагрузки
 exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
 
-# на ubuntu 22 достаточно установить gnome-tweaks
-#exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
 
-#exec "setxkbmap -layout us,ru"
-#exec "setxkbmap -option 'grp:alt_shift_toggle'"
-
-# переводчик Glate
-exec --no-startup-id glate
 exec --no-startup-id gnome-terminal
-exec --no-startup-id opera
-exec --no-startup-id firefox
+# exec --no-startup-id opera
+# exec --no-startup-id firefox
 exec --no-startup-id code
+exec --no-startup-id rubymine
 exec --no-startup-id postman
 exec --no-startup-id google-chrome
 exec --no-startup-id crow
-exec --no-startup-id protonvpn
+#exec --no-startup-id protonvpn
 exec --no-startup-id obs
 
 
 # ПРИВЯЗКА К ВОРКСПЕЙСАМ
-assign [class="(?i)Gnome-terminal"] $ws1
-assign [class="(?i)Firefox"] $ws1
+# assign [class="(?i)Gnome-terminal"] $ws1
+#assign [class="(?i)Firefox"] $ws1
 assign [class="(?i)Code"] $ws1
+assign [class="(?i)rubymine"] $ws1
 assign [class="(?i)Postman"] $ws1
-assign [class="(?i)Yandex"] $ws2
-assign [class="Google"] $ws2
-assign [class="Opera"] $ws3
-assign [class="Protonvpn"] $ws5
+#assign [class="(?i)Yandex"] $ws2
+#assign [class="Google"] $ws2
+#assign [class="Opera"] $ws3
+#assign [class="Protonvpn"] $ws5
 assign [class="(?i)Obs"] $ws10
 
 
@@ -72,7 +69,7 @@ bindsym $mod+F2 exec firefox
 #bindsym $mod+F3 exec opera
 bindsym $mod+F9 exec nemo
 bindsym $mod+F8 exec gedit
-#bindsym $mod+F5 exec
+bindsym $mod+F5 exec google-chrome
 
 
 
