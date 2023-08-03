@@ -32,6 +32,8 @@ exec --no-startup-id flameshot
 # exec --no-startup-id firefox
 #exec --no-startup-id protonvpn
 #exec --no-startup-id obs
+exec --no-startup-id "pkill -f 'i3status -c'; rm -f /var/run/keyboard_layout.pid; while true; do /home/a/.config/i3status/keyboard_layout.sh > /var/run/keyboard_layout.pid; sleep 1; done &"
+
 
 
 # ПРИВЯЗКА К ВОРКСПЕЙСАМ
@@ -267,6 +269,19 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
 bar {
+    #status_command while :; do echo "$(date +%T)"; sleep 1; done
+    #status_command while :; do echo $(~/keyboard_layout.sh); sleep 1; done
+    #status_command while :; do MY_VAR=$(/home/a/.config/i3status/keyboard_layout.sh); echo $MY_VAR; sleep 1; done
+    #status_command while :; do date +'%T'; echo -n ' '; /home/a/.config/i3status/keyboard_layout.sh; done
+    #status_command /home/a/.config/i3status/status.sh
+    #status_command while :; do echo -n $(date +'%T'); echo -n " "; /usr/local/bin/xkb-switch; sleep 1; done
+    #status_command while :; do echo -n $(date +'%T'); echo -n " "; /usr/local/bin/xkb-switch; sleep 1; done
+    #status_command exec ~/.config/i3status/i3status-custom.sh
+    #status_command i3blocks
     status_command i3status
+    
 }
+
+
