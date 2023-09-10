@@ -57,8 +57,9 @@ assign [class="(?i)Obs"] $ws10
 # ГОРЯЧИЕ КЛАВИШИ
 #bindsym $mod+F1 exec code
 bindsym $mod+F2 exec firefox
-#bindsym $mod+F3 exec opera
+bindsym $mod+F3 exec opera
 bindsym $mod+F5 exec google-chrome
+bindsym $mod+F7 exec obsidian
 bindsym $mod+F8 exec gedit
 bindsym $mod+F9 exec nemo
 bindsym $mod+F10 exec obs
@@ -283,5 +284,3 @@ bar {
     status_command i3status
     
 }
-
-
