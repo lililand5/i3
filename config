@@ -10,29 +10,38 @@ bindsym $mod+Shift+e exec i3-msg exit
 # Шрифт для заголовков окон. Также будет использоваться панелью, если не выбран другой шрифт.
 # используется в блоке bar {} ниже.
 font pango:monospace 13
+# bindsym $mod+b exec blueman-manager
 
 
 # АВТОЗАПУСК
+# bluetooth
+#exec --no-startup-id blueman-applet
+exec blueman-mananger
+
 # display resolution
 # xrandr --query # options
 exec --no-startup-id xrandr --output eDP --mode 1920x1200
 
+#демон обновления статуса громкости звука
+exec --no-startup-id ~/.config/i3blocks/sound/sound_daemon.sh &
+
+
 # раскладка клавиатуры
 exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
-
-
-exec --no-startup-id gnome-terminal
-exec --no-startup-id code
-exec --no-startup-id rubymine
-exec --no-startup-id postman
-exec --no-startup-id google-chrome
 exec --no-startup-id crow
 exec --no-startup-id flameshot
+exec --no-startup-id "pkill -f 'i3status -c'; rm -f /var/run/keyboard_layout.pid; while true; do /home/a/.config/i3status/keyboard_layout.sh > /var/run/keyboard_layout.pid; sleep 1; done &"
+
+#exec --no-startup-id gnome-terminal
+#exec --no-startup-id code
+#exec --no-startup-id google-chrome
+#exec --no-startup-id rubymine
+#exec --no-startup-id postman
 # exec --no-startup-id opera
 # exec --no-startup-id firefox
 #exec --no-startup-id protonvpn
 #exec --no-startup-id obs
-exec --no-startup-id "pkill -f 'i3status -c'; rm -f /var/run/keyboard_layout.pid; while true; do /home/a/.config/i3status/keyboard_layout.sh > /var/run/keyboard_layout.pid; sleep 1; done &"
+
 
 
 
@@ -280,7 +289,6 @@ bar {
     #status_command while :; do echo -n $(date +'%T'); echo -n " "; /usr/local/bin/xkb-switch; sleep 1; done
     #status_command while :; do echo -n $(date +'%T'); echo -n " "; /usr/local/bin/xkb-switch; sleep 1; done
     #status_command exec ~/.config/i3status/i3status-custom.sh
-    #status_command i3blocks
-    status_command i3status
-    
+    status_command i3blocks
+    #status_command i3status
 }
